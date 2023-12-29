@@ -6,7 +6,7 @@ Esta faltando fazer o algoritmo para fazer os cálculos.
 E esta aberto para melhoria.
 
 Exemplos:
-1. Calculos
+1. Calculo usando notas de valor mais altos
 2. Entrada de dados por console
 3. Calculo de tempo de execução
 4. Organizar código
