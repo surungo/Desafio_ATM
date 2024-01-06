@@ -1,12 +1,19 @@
+import java.util.Date;
 
 public class Main {
 	public static void main(String[] args) {
-		int[] notas = { 2, 5, 10, 20, 50, 100, 200 };
+		Date data_inicio = new Date();
+		int[] notas = { 2, 5, 10, 20, 50, 100, 200, 500, 1000, 2000, 5000, 10000, 20000, 50000, 100000, 200000, 500000, 1000000, 2000000, 5000000 };
 		T.imprimirNotas(notas);
 		int valor = T.escolherValor();
 		T.printValor(String.valueOf(valor));
 		int[] qtNotas = T.calcularQtNotas(notas, valor);
 		T.imprimirQtNotas(notas, qtNotas);
+		/*
+		 * 
+		 */
+		
+		T.findDifference(data_inicio, new Date());
 	}
 }
 
@@ -46,7 +53,7 @@ class T {
 	}
 
 	public static int escolherValor() {
-		int vvalor = 387;
+		int vvalor =  8888888;
 		return vvalor;
 	}
 
@@ -56,4 +63,63 @@ class T {
 			System.out.println("notas " + pnotas[i]);
 		}
 	}
+	
+	public static void
+    findDifference(Date d1,
+                   Date d2)
+    {
+        // Calculate time difference
+		// in milliseconds
+		long difference_In_Time
+		    = d2.getTime() - d1.getTime();
+ 
+		// Calculate time difference in
+		// seconds, minutes, hours, years,
+		// and days
+		long difference_In_Seconds
+		    = (difference_In_Time
+		       / 1000)
+		      % 60;
+ 
+		long difference_In_Minutes
+		    = (difference_In_Time
+		       / (1000 * 60))
+		      % 60;
+ 
+		long difference_In_Hours
+		    = (difference_In_Time
+		       / (1000 * 60 * 60))
+		      % 24;
+ 
+		long difference_In_Years
+		    = (difference_In_Time
+		       / (1000l * 60 * 60 * 24 * 365));
+ 
+		long difference_In_Days
+		    = (difference_In_Time
+		       / (1000 * 60 * 60 * 24))
+		      % 365;
+ 
+		// Print the date difference in
+		// years, in days, in hours, in
+		// minutes, and in seconds
+ 
+		System.out.print(
+		    "Difference "
+		    + "between two dates is: ");
+ 
+		System.out.println(
+		    difference_In_Years
+		    + " years, "
+		    + difference_In_Days
+		    + " days, "
+		    + difference_In_Hours
+		    + " hours, "
+		    + difference_In_Minutes
+		    + " minutes, "
+		    + difference_In_Seconds
+		    + " seconds, "
+		    + difference_In_Time
+		    + " milliseconds");
+    }
 }
