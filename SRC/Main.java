@@ -21,11 +21,10 @@ class T{
  
 	public static int[] calcularQtNotas(int[] pNotas, int pValor){
 		int[] vQtNotas ={0,0,0,0,0,0,0};
-		int valor = escolherValor();
 		for(int i = vQtNotas.length - 1; i > 0; i--) {
-			while(valor >= pNotas[i]) {
+			while(pValor >= pNotas[i]) {
 				vQtNotas[i] += 1;
-				valor -= pNotas[i];
+				pValor -= pNotas[i];
     	    }
         }
         return vQtNotas;
@@ -38,6 +37,7 @@ class T{
   
 	public static int escolherValor(){
 		Scanner in = new Scanner(System.in);
+		System.out.println("insira um valor:");
 		int valor = in.nextInt();
 		return valor;
 	}
